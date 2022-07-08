@@ -33,8 +33,26 @@ class Gis extends CI_Controller {
     public function marker()
 	{
         $data = array(
-            'judul' => 'marker',
+            'judul' => 'Marker',
             'page' => 'v_marker',
+        );
+		$this->load->view('v_template', $data, false);
+	}
+
+    public function circle()
+	{
+        $data = array(
+            'judul' => 'Circle',
+            'page' => 'v_circle',
+        );
+		$this->load->view('v_template', $data, false);
+	}
+
+    public function polyline()
+	{
+        $data = array(
+            'judul' => 'Polyline',
+            'page' => 'v_polyline',
         );
 		$this->load->view('v_template', $data, false);
 	}
