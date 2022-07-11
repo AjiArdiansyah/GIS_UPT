@@ -61,7 +61,7 @@ font-size: 16px;"> Last access : 30 May 2014 &nbsp; <a href="#" class="btn btn-d
                         <a  href="<?= base_url('gis/polyline')?>"><i class="fa fa-edit "></i> Polyline </a>
                     </li>		
                     <li  >
-                        <a  href="form.html"><i class="fa fa-edit "></i> Polygon </a>
+                        <a  href="<?= base_url('gis/polygon')?>"><i class="fa fa-edit "></i> Polygon </a>
                     </li>			
 					
 					                   
