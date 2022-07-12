@@ -11,7 +11,17 @@
     <link href="<?= base_url('binary-admin/') ?>assets/css/font-awesome.css" rel="stylesheet" />
         <!-- CUSTOM STYLES-->
     <link href="<?= base_url('binary-admin/') ?>assets/css/custom.css" rel="stylesheet" />
+    <!-- SCRIPTS -AT THE BOTOM TO REDUCE THE LOAD TIME-->
+    <!-- JQUERY SCRIPTS -->
+    <script src="<?= base_url('binary-admin/') ?>assets/js/jquery-1.10.2.js"></script>
+      <!-- BOOTSTRAP SCRIPTS -->
+    <script src="<?= base_url('binary-admin/') ?>assets/js/bootstrap.min.js"></script>
+    <!-- METISMENU SCRIPTS -->
+    <script src="<?= base_url('binary-admin/') ?>assets/js/jquery.metisMenu.js"></script>
+      <!-- CUSTOM SCRIPTS -->
+    <script src="<?= base_url('binary-admin/') ?>assets/js/custom.js"></script>
     
+
     <!-- Library Leaflet-->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css" integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ==" crossorigin="" />
 <script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js" integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ==" crossorigin=""></script>
@@ -62,34 +72,25 @@ font-size: 16px;"> Last access : 30 May 2014 &nbsp; <a href="#" class="btn btn-d
                     </li>		
                     <li  >
                         <a  href="<?= base_url('gis/polygon')?>"><i class="fa fa-edit "></i> Polygon </a>
+                    </li>	
+                    <li  >
+                        <a  href="<?= base_url('gis/geojson')?>"><i class="fa fa-edit "></i> Geojson </a>
                     </li>			
-					
+					<li  >
+                        <a  href="<?= base_url('gis/getcoordinat')?>"><i class="fa fa-edit "></i> Get Coordinat </a>
+                    </li>	
 					                   
                     <li>
-                        <a href="#"><i class="fa fa-sitemap "></i> Multi-Level Dropdown<span class="fa arrow"></span></a>
+                        <a href="#"><i class="fa fa-sitemap "></i> Lokasi<span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
                             <li>
-                                <a href="#">Second Level Link</a>
+                                <a href="<?= base_url('lokasi/input') ?>">Input Lokasi</a>
                             </li>
                             <li>
-                                <a href="#">Second Level Link</a>
+                                <a href="<?= base_url('lokasi/index') ?>">Pemetaan Coordinat</a>
                             </li>
                             <li>
-                                <a href="#">Second Level Link<span class="fa arrow"></span></a>
-                                <ul class="nav nav-third-level">
-                                    <li>
-                                        <a href="#">Third Level Link</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Third Level Link</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Third Level Link</a>
-                                    </li>
-
-                                </ul>
                                
-                            </li>
                         </ul>
                       </li>  
                   <li  >
@@ -125,15 +126,6 @@ font-size: 16px;"> Last access : 30 May 2014 &nbsp; <a href="#" class="btn btn-d
          <!-- /. PAGE WRAPPER  -->
         </div>
      <!-- /. WRAPPER  -->
-    <!-- SCRIPTS -AT THE BOTOM TO REDUCE THE LOAD TIME-->
-    <!-- JQUERY SCRIPTS -->
-    <script src="<?= base_url('binary-admin/') ?>assets/js/jquery-1.10.2.js"></script>
-      <!-- BOOTSTRAP SCRIPTS -->
-    <script src="<?= base_url('binary-admin/') ?>assets/js/bootstrap.min.js"></script>
-    <!-- METISMENU SCRIPTS -->
-    <script src="<?= base_url('binary-admin/') ?>assets/js/jquery.metisMenu.js"></script>
-      <!-- CUSTOM SCRIPTS -->
-    <script src="<?= base_url('binary-admin/') ?>assets/js/custom.js"></script>
     
    
 </body>
