@@ -87,7 +87,7 @@ font-size: 16px;"> Last access : 30 May 2014 &nbsp; <a href="#" class="btn btn-d
                                 <a href="<?= base_url('lokasi/input') ?>">Input Lokasi</a>
                             </li>
                             <li>
-                                <a href="<?= base_url('lokasi/input') ?>">Pemetaan Lokasi</a>
+                                <a href="<?= base_url('lokasi/index') ?>">Pemetaan Coordinat</a>
                             </li>
                             <li>
                                
