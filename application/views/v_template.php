@@ -76,33 +76,21 @@ font-size: 16px;"> Last access : 30 May 2014 &nbsp; <a href="#" class="btn btn-d
                     <li  >
                         <a  href="<?= base_url('gis/geojson')?>"><i class="fa fa-edit "></i> Geojson </a>
                     </li>			
-					
+					<li  >
+                        <a  href="<?= base_url('gis/getcoordinat')?>"><i class="fa fa-edit "></i> Get Coordinat </a>
+                    </li>	
 					                   
                     <li>
-                        <a href="#"><i class="fa fa-sitemap "></i> Multi-Level Dropdown<span class="fa arrow"></span></a>
+                        <a href="#"><i class="fa fa-sitemap "></i> Lokasi<span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
                             <li>
-                                <a href="#">Second Level Link</a>
+                                <a href="<?= base_url('lokasi/input') ?>">Input Lokasi</a>
                             </li>
                             <li>
-                                <a href="#">Second Level Link</a>
+                                <a href="<?= base_url('lokasi/input') ?>">Pemetaan Lokasi</a>
                             </li>
                             <li>
-                                <a href="#">Second Level Link<span class="fa arrow"></span></a>
-                                <ul class="nav nav-third-level">
-                                    <li>
-                                        <a href="#">Third Level Link</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Third Level Link</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Third Level Link</a>
-                                    </li>
-
-                                </ul>
                                
-                            </li>
                         </ul>
                       </li>  
                   <li  >
