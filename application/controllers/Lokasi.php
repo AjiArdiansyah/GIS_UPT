@@ -92,7 +92,15 @@ class Lokasi extends CI_Controller {
 			$this->session->set_flashdata('pesan', 'Data Lokasi Berhasil Disimpan !!');
 			redirect('lokasi/index');
 		}
+	}
+	public function detail($id_lokasi)
+	{
+		$data = array(
+            'judul' => 'Detail Posisi Coordinat',
+            'page' => 'lokasi/v_detail_lokasi',
+			'lokasi' => $this->m_lokasi->detail($id_lokasi),
+        );
+		$this->load->view('v_template', $data, false);
 
-		
 	}
 }

@@ -1,7 +1,37 @@
-<div id="map" style="width: 100%; height: 500px;"></div>
+<div class="row">
+    <div class="col-sm-6">
+    <div id="map" style="width: 100%; height: 500px;"></div>
+</div>
+
+<div class="col-sm-6">
+   
+    
+
+    <table class="table table-bordered">
+        <tr>
+            <th>Nama Lokasi </th>
+                <th>:</th>
+                <td><?= $lokasi->nama_lokasi ?></td>
+             </tr>
+             <tr>
+            <th>Latitude</th>
+                <th>:</th>
+                <td><?= $lokasi->latitude ?></td>
+             </tr>
+             <tr>
+            <th>Longitude </th>
+                <th>:</th>
+                <td><?= $lokasi->longitude ?></td>
+             </tr>
+    </table>
+    <a class="btn btn-success" href="<?= base_url('lokasi/index') ?>">Kembali</a>
+
+</div>
+
+</div>
+
 
 <script>
-
 var peta1 = L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
 		attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, ' +
 			'<a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
@@ -31,7 +61,7 @@ var peta4 = L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}
     
 
     var map = L.map('map', {
-		center: [-6.770664956358395, 111.7254219767461],
+		center: [<?= $lokasi->latitude ?>, <?= $lokasi->longitude ?>],
 		zoom: 14,
 		layers: [peta1],
 	});
@@ -42,21 +72,12 @@ var peta4 = L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}
         'Street 3': peta3,
         'Dark 4': peta4,
     };
-    var layerControl = L.control.layers(baseLayers).addTo(map);
 
-    <?php foreach ($lokasi as $key => $value) { ?>
-        L.marker([<?= $value->latitude ?>, <?= $value->longitude ?>])
-        .bindPopup("<b><?= $value->nama_lokasi ?></b><br>" +
-            "Lat : <?= $value->latitude ?><br>"+
-            "Long : <?= $value->longitude ?><br><br>"+
-			"<div class='text-center'><div col='sm-12'>"+
-			"<a class='btn btn-xs btn-success'"+
-			"href='<?= base_url('lokasi/edit/' . $value->id_lokasi) ?>'>Edit</a>     "+
-			"<a class='btn btn-xs btn-warning'"+
-			"href='<?= base_url('lokasi/detail/' . $value->id_lokasi) ?>'>Detail</a>     "+
-			"<a class='btn btn-xs btn-danger'"+
-			"href='<?= base_url('lokasi/delete/' . $value->id_lokasi) ?>'>Delete</a>"+
-			"</div></div>")
-        .addTo(map);
-    <?php } ?>
+    L.marker([<?= $lokasi->latitude ?>, <?= $lokasi->longitude ?>])
+    .addTo(map)
+    .bindPopup("<b><?= $lokasi->nama_lokasi ?></b><br>" +
+            "Lat : <?= $lokasi->latitude ?><br>"+
+            "Long : <?= $lokasi->longitude ?><br>")
+            .openPopup();
+   
 </script>
