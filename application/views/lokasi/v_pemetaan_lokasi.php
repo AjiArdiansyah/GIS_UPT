@@ -48,7 +48,13 @@ var peta4 = L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}
         L.marker([<?= $value->latitude ?>, <?= $value->longitude ?>])
         .bindPopup("<b><?= $value->nama_lokasi ?></b><br>" +
             "Lat : <?= $value->latitude ?><br>"+
-            "Long : <?= $value->longitude ?>")
+            "Long : <?= $value->longitude ?><br><br>"+
+			"<div class='text-center'><div col='sm-12'>"+
+			"<a class='btn btn-xs btn-success'"+
+			"href='<?= base_url('lokasi/edit/' . $value->id_lokasi) ?>'>Edit</a>     "+
+			"<a class='btn btn-xs btn-danger'"+
+			"href='<?= base_url('lokasi/delete/' . $value->id_lokasi) ?>'>Delete</a>"+
+			"</div></div>")
         .addTo(map);
     <?php } ?>
 </script>
