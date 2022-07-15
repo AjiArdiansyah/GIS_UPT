@@ -11,7 +11,7 @@ class Lokasi extends CI_Controller {
 		
 	  }
 
-	  //pemetaan lokasi
+	//pemetaan coordinat
 	public function index()
 	{
 		$data = array(
@@ -110,5 +110,16 @@ class Lokasi extends CI_Controller {
 		$this->m_lokasi->delete($data);
 		$this->session->set_flashdata('pesan', 'Data Lokasi Berhasil Hapus !!');
 			redirect('lokasi/index');
+	}
+
+	//pemetaan coordinat
+	public function listlokasi()
+	{
+		$data = array(
+            'judul' => 'List Lokasi',
+            'page' => 'lokasi/v_list_lokasi',
+			'lokasi' => $this->m_lokasi->allData(),
+        );
+		$this->load->view('v_template', $data, false);
 	}
 }

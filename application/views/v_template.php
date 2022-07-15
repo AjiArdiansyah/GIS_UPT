@@ -7,10 +7,14 @@
     <title>Free Bootstrap Admin Template : Binary Admin</title>
 	<!-- BOOTSTRAP STYLES-->
     <link href="<?= base_url('binary-admin/') ?>assets/css/bootstrap.css" rel="stylesheet" />
-     <!-- FONTAWESOME STYLES-->
+    <!-- FONTAWESOME STYLES-->
     <link href="<?= base_url('binary-admin/') ?>assets/css/font-awesome.css" rel="stylesheet" />
-        <!-- CUSTOM STYLES-->
+    <!-- CUSTOM STYLES-->
     <link href="<?= base_url('binary-admin/') ?>assets/css/custom.css" rel="stylesheet" />
+
+    <!-- TABLE STYLES-->
+    <link href="<?= base_url('binary-admin/') ?>assets/js/dataTables/dataTables.bootstrap.css" rel="stylesheet" />
+    
     <!-- SCRIPTS -AT THE BOTOM TO REDUCE THE LOAD TIME-->
     <!-- JQUERY SCRIPTS -->
     <script src="<?= base_url('binary-admin/') ?>assets/js/jquery-1.10.2.js"></script>
@@ -90,6 +94,9 @@ font-size: 16px;"> Last access : 30 May 2014 &nbsp; <a href="#" class="btn btn-d
                                 <a href="<?= base_url('lokasi/index') ?>">Pemetaan Coordinat</a>
                             </li>
                             <li>
+                                <a href="<?= base_url('lokasi/listlokasi') ?>">List Lokasi</a>
+                            </li>
+                            <li>
                                
                         </ul>
                       </li>  
@@ -126,7 +133,24 @@ font-size: 16px;"> Last access : 30 May 2014 &nbsp; <a href="#" class="btn btn-d
          <!-- /. PAGE WRAPPER  -->
         </div>
      <!-- /. WRAPPER  -->
-    
-   
+    <!-- SCRIPTS -AT THE BOTOM TO REDUCE THE LOAD TIME-->
+    <!-- JQUERY SCRIPTS -->
+    <script src="<?= base_url('binary-admin/') ?>assets/js/jquery-1.10.2.js"></script>
+      <!-- BOOTSTRAP SCRIPTS -->
+    <script src="<?= base_url('binary-admin/') ?>assets/js/bootstrap.min.js"></script>
+    <!-- METISMENU SCRIPTS -->
+    <script src="<?= base_url('binary-admin/') ?>assets/js/jquery.metisMenu.js"></script>
+     <!-- DATA TABLE SCRIPTS -->
+    <!-- DATA TABLE SCRIPTS -->
+    <script src="<?= base_url('binary-admin/') ?>assets/js/dataTables/jquery.dataTables.js"></script>
+    <script src="<?= base_url('binary-admin/') ?>assets/js/dataTables/dataTables.bootstrap.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#dataTables-example').dataTable();
+        });   
+    </script>
+
+    <!-- CUSTOM SCRIPTS -->
+    <script src="<?= base_url('binary-admin/') ?>assets/js/custom.js"></script>
 </body>
 </html>
