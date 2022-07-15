@@ -103,4 +103,12 @@ class Lokasi extends CI_Controller {
 		$this->load->view('v_template', $data, false);
 
 	}
+
+	public function delete($id_lokasi)
+	{
+		$data = array('id_lokasi' => $id_lokasi);
+		$this->m_lokasi->delete($data);
+		$this->session->set_flashdata('pesan', 'Data Lokasi Berhasil Hapus !!');
+			redirect('lokasi/index');
+	}
 }

@@ -1,3 +1,11 @@
+<?php
+//notifikasi pesan data berhasil disimpan
+if ($this->session->flashdata('pesan')) {
+	echo '<div class="alert alert-danger">';
+	echo $this->session->flashdata('pesan');
+	echo '</div>';
+}
+?>
 <div id="map" style="width: 100%; height: 500px;"></div>
 
 <script>
@@ -49,14 +57,14 @@ var peta4 = L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}
         .bindPopup("<b><?= $value->nama_lokasi ?></b><br>" +
             "Lat : <?= $value->latitude ?><br>"+
             "Long : <?= $value->longitude ?><br><br>"+
-			"<div class='text-center'><div col='sm-12'>"+
+			"<div class='text-center'>"+
 			"<a class='btn btn-xs btn-success'"+
 			"href='<?= base_url('lokasi/edit/' . $value->id_lokasi) ?>'>Edit</a>     "+
 			"<a class='btn btn-xs btn-warning'"+
 			"href='<?= base_url('lokasi/detail/' . $value->id_lokasi) ?>'>Detail</a>     "+
-			"<a class='btn btn-xs btn-danger'"+
+			"<a onclick='return confirm()'class='btn btn-xs btn-danger'"+
 			"href='<?= base_url('lokasi/delete/' . $value->id_lokasi) ?>'>Delete</a>"+
-			"</div></div>")
+			"</div>")
         .addTo(map);
     <?php } ?>
 </script>
