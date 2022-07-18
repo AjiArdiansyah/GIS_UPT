@@ -83,4 +83,13 @@ class Gis extends CI_Controller {
         );
 		$this->load->view('v_template', $data, false);
 	}
+
+    public function drawermap()
+	{
+        $data = array(
+            'judul' => 'Drawer Map',
+            'page' => 'v_drawer_map',
+        );
+		$this->load->view('v_template', $data, false);
+	}
 }
