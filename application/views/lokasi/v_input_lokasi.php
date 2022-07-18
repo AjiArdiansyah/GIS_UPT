@@ -15,7 +15,7 @@
         echo '</div>';
     }
     ?>
-    <?php echo form_open ('lokasi/input')?>
+    <?php echo form_open_multipart ('lokasi/input')?>
 
     <div class="form-group">
             <label>Nama Lokasi</label>
@@ -30,6 +30,11 @@
         <div class="form-group">
             <label>Longitude</label>
             <input class="form-control" name="longitude" id="Longitude" placeholder="Longitude">
+        </div>
+
+        <div class="form-group">
+            <label>Gambar</label>
+            <input type="file" class="form-control" name="gambar" accept="image/*" required>
         </div>
 
         <button type="submit" class="btn btn-primary"> Simpan </button>

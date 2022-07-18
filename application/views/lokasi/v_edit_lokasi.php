@@ -15,7 +15,7 @@
         echo '</div>';
     }
     ?>
-    <?php echo form_open ('lokasi/edit/' . $lokasi->id_lokasi)?>
+    <?php echo form_open_multipart ('lokasi/edit/' . $lokasi->id_lokasi)?>
 
     <div class="form-group">
             <label>Nama Lokasi</label>
@@ -32,8 +32,20 @@
             <input value="<?= $lokasi->longitude ?>" class="form-control" name="longitude" id="Longitude" placeholder="Longitude">
         </div>
 
+        <div class="form-group">
+            <label>Ganti Gambar</label>
+            <input type="file" class="form-control" name="gambar" accept="image/*" required>
+        </div>
+
+        <div class="form-group">
+            <br>
+            <img width="300px" src="<?= base_url('gambar/'.$lokasi->gambar) ?>">
+        </div>
+
         <button type="submit" class="btn btn-primary"> Simpan </button>
         <a href="<?= base_url("lokasi/index") ?>" class="btn btn-warning"> Kembali </a>
+
+        
     <?php echo form_close() ?>
 </div>
 

@@ -45,11 +45,28 @@ class Lokasi extends CI_Controller {
 			);
 			$this->load->view('v_template', $data, false);
 		}else {
+			$config['upload_path'] ='./gambar/';
+			$config['allowed_types'] = 'gif|jpg|png|jpeg';
+			$config['max_size']	= 2048;
+			$this->upload->initialize($config);
+			if (!$this->upload->do_upload('gambar')) {
+				$data = array(
+					'judul' => 'Input Lokasi',
+					'page' => 'lokasi/v_input_lokasi',
+					'error_upload' => $this->upload->display_errors(),
+				);
+				$this->load->view('v_template', $data, false);
+		}else {
+			$upload_data = array('upload_data' => $this->upload->data());
+			$config['image_library'] = 'gd2';
+			$config['source_image'] = './gambar/'. $upload_data['upload_data']['file_name'];
+			$this->load->library('image_lib', $config);
 			# simpan data ke database
 			$data = array(
 				'nama_lokasi' => $this->input->post('nama_lokasi'),
 				'latitude' => $this->input->post('latitude'),
-				'longitude' => $this->input->post('longitude'), 
+				'longitude' => $this->input->post('longitude'),
+				'gambar' => $upload_data['upload_data']['file_name'],
 			);
 			$this->m_lokasi->input($data);
 			//pesan data berhasil di input
@@ -57,7 +74,7 @@ class Lokasi extends CI_Controller {
 			redirect('lokasi/input');
 		}	
 	}
-
+}
 	//edit data
 	public function edit($id_lokasi)
 	{
@@ -80,17 +97,47 @@ class Lokasi extends CI_Controller {
 			);
 			$this->load->view('v_template', $data, false);
 		}else {
+			$config['upload_path'] ='./gambar/';
+			$config['allowed_types'] = 'gif|jpg|png|jpeg';
+			$config['max_size']	= 2048;
+			$this->upload->initialize($config);
+			if (!$this->upload->do_upload('gambar')) {
+				$data = array(
+					'id_lokasi' => $id_lokasi, 
+					'nama_lokasi' => $this->input->post('nama_lokasi'),
+					'latitude' => $this->input->post('latitude'),
+					'longitude' => $this->input->post('longitude'),
+				);
 			# simpan data ke database
 			$data = array(
 				'id_lokasi' => $id_lokasi, 
 				'nama_lokasi' => $this->input->post('nama_lokasi'),
 				'latitude' => $this->input->post('latitude'),
-				'longitude' => $this->input->post('longitude'), 
+				'longitude' => $this->input->post('longitude'),
+				'gambar' => $upload_data['upload_data']['file_name'], 
 			);
 			$this->m_lokasi->edit($data);
 			//pesan data berhasil di input
 			$this->session->set_flashdata('pesan', 'Data Lokasi Berhasil Disimpan !!');
 			redirect('lokasi/index');
+			}else {
+			$upload_data = array('upload_data' => $this->upload->data());
+			$config['image_library'] = 'gd2';
+			$config['source_image'] = './gambar/'. $upload_data['upload_data']['file_name'];
+			$this->load->library('image_lib', $config);
+			# simpan data ke database
+			$data = array(
+				'id_lokasi' => $id_lokasi, 
+				'nama_lokasi' => $this->input->post('nama_lokasi'),
+				'latitude' => $this->input->post('latitude'),
+				'longitude' => $this->input->post('longitude'),
+				'gambar' => $upload_data['upload_data']['file_name'], 
+			);
+			$this->m_lokasi->edit($data);
+			//pesan data berhasil di input
+			$this->session->set_flashdata('pesan', 'Data Lokasi Berhasil Disimpan !!');
+			redirect('lokasi/index');
+			}
 		}
 	}
 	public function detail($id_lokasi)

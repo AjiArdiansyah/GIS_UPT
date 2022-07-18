@@ -57,6 +57,7 @@ var peta4 = L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}
         .bindPopup("<b><?= $value->nama_lokasi ?></b><br>" +
             "Lat : <?= $value->latitude ?><br>"+
             "Long : <?= $value->longitude ?><br><br>"+
+			"<img width='200px' src='<?= base_url('gambar/' . $value->gambar) ?>'><br><br>"+
 			"<div class='text-center'>"+
 			"<a class='btn btn-xs btn-success'"+
 			"href='<?= base_url('lokasi/edit/' . $value->id_lokasi) ?>'>Edit</a>     "+

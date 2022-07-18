@@ -77,7 +77,8 @@ var peta4 = L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}
     .addTo(map)
     .bindPopup("<b><?= $lokasi->nama_lokasi ?></b><br>" +
             "Lat : <?= $lokasi->latitude ?><br>"+
-            "Long : <?= $lokasi->longitude ?><br>")
-            .openPopup();
+            "Long : <?= $lokasi->longitude ?><br>"
+            "<img width='200px' src='<?= base_url('gambar/' . $lokasi->gambar) ?>'><br><br>"
+            ).openPopup();
    
 </script>
