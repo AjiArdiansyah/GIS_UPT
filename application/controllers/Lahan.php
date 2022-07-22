@@ -69,6 +69,7 @@ class Lahan extends CI_Controller {
 				'pemilik' => $this->input->post('pemilik'),
 				'luas' => $this->input->post('luas'),
                 'geojson' => $this->input->post('geojson'),
+                'warna' => $this->input->post('warna'),
 				'sertifikat' => $upload_data['upload_data']['file_name'],
 			);
 			$this->m_lahan->input($data);
@@ -78,6 +79,13 @@ class Lahan extends CI_Controller {
         }
         
         }
+	}
+    public function delete($id_lahan)
+	{
+		$data = array('id_lahan' => $id_lahan);
+		$this->m_lahan->delete($data);
+		$this->session->set_flashdata('pesan', 'Data Lahan Berhasil Hapus !!');
+			redirect('lahan/index');
 	}
 }
 

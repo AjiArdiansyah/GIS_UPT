@@ -39,8 +39,6 @@ class M_lokasi extends CI_Model {
 	{
 		$this->db->where('id_lokasi', $edit['id_lokasi']);
 		$this->db->update('tbl_lokasi', $edit);
-		
-		
 	}
 }
 

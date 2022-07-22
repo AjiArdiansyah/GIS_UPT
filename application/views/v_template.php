@@ -91,9 +91,9 @@ font-size: 16px;"> Last access : 30 May 2014 &nbsp; <a href="#" class="btn btn-d
                     <li>
                         <a  href="<?= base_url('gis/drawermap')?>"><i class="fa fa-edit "></i> Drawer Map </a>
                     </li>
-                    <li>
+                    <!-- <li>
                         <a  href="<?= base_url('gis/drawermap')?>"><i class="fa fa-edit "></i> Tes </a>
-                    </li>	
+                    </li>	 -->
 					                   
                     <li>
                         <a href="#"><i class="fa fa-sitemap "></i> Lokasi<span class="fa arrow"></span></a>
