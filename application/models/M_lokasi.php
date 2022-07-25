@@ -1,4 +1,7 @@
 <?php
+
+
+
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class M_lokasi extends CI_Model {
@@ -8,6 +11,7 @@ class M_lokasi extends CI_Model {
 	public function input($data)
 	{
 		$this->db->insert('tbl_lokasi', $data);
+        
 	}
 
 	//mengambil semua data dari tabel
@@ -39,6 +43,8 @@ class M_lokasi extends CI_Model {
 	{
 		$this->db->where('id_lokasi', $edit['id_lokasi']);
 		$this->db->update('tbl_lokasi', $edit);
+		
+		
 	}
 }
 

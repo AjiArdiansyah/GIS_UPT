@@ -79,14 +79,14 @@ class Lokasi extends CI_Controller {
 	public function edit($id_lokasi)
 	{
 		$this->form_validation->set_rules('nama_lokasi', 'Nama Lokasi', 'required', array(
-			'required' => '%s Wajib Diisi !'
+			'required' => '% Wajib Diisi !'
 		));
 		$this->form_validation->set_rules('latitude', 'Latitude', 'required', array(
-			'required' => '%s Wajib Diisi !'
+			'required' => '% Wajib Diisi !'
 		));
 
 		$this->form_validation->set_rules('longitude', 'Longitude', 'required', array(
-			'required' => '%s Wajib Diisi !'
+			'required' => '% Wajib Diisi !'
 		));
 
 		if ($this->form_validation->run() == FALSE) {

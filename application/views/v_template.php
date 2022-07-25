@@ -90,10 +90,11 @@ font-size: 16px;"> Last access : 30 May 2014 &nbsp; <a href="#" class="btn btn-d
                     </li>
                     <li>
                         <a  href="<?= base_url('gis/drawermap')?>"><i class="fa fa-edit "></i> Drawer Map </a>
+                    </li>	
+
+                    <li>
+                        <a  href="<?= base_url('user/index')?>"><i class="fa fa-edit "></i> Data User </a>
                     </li>
-                    <!-- <li>
-                        <a  href="<?= base_url('gis/drawermap')?>"><i class="fa fa-edit "></i> Tes </a>
-                    </li>	 -->
 					                   
                     <li>
                         <a href="#"><i class="fa fa-sitemap "></i> Lokasi<span class="fa arrow"></span></a>
@@ -106,23 +107,6 @@ font-size: 16px;"> Last access : 30 May 2014 &nbsp; <a href="#" class="btn btn-d
                             </li>
                             <li>
                                 <a href="<?= base_url('lokasi/listlokasi') ?>">List Lokasi</a>
-                            </li>
-                            <li>
-                               
-                        </ul>
-                      </li>
-                      
-                      <li>
-                        <a href="#"><i class="fa fa-sitemap "></i> Lahan<span class="fa arrow"></span></a>
-                        <ul class="nav nav-second-level">
-                            <li>
-                                <a href="<?= base_url('lahan/input') ?>">Input Lahan</a>
-                            </li>
-                            <li>
-                                <a href="<?= base_url('lahan/index') ?>">Pemetaan Coordinat</a>
-                            </li>
-                            <li>
-                                <a href="<?= base_url('lahan/listlahan') ?>">List Lahan</a>
                             </li>
                             <li>
                                
