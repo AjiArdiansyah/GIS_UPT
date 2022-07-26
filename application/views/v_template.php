@@ -95,6 +95,10 @@ font-size: 16px;"> Last access : 30 May 2014 &nbsp; <a href="#" class="btn btn-d
                     <li>
                         <a  href="<?= base_url('user/index')?>"><i class="fa fa-edit "></i> Data User </a>
                     </li>
+
+                    <li>
+                        <a  href="<?= base_url('user/input')?>"><i class="fa fa-edit "></i> Input Data User </a>
+                    </li>
 					                   
                     <li>
                         <a href="#"><i class="fa fa-sitemap "></i> Lokasi<span class="fa arrow"></span></a>
