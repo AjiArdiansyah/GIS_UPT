@@ -8,6 +8,7 @@
     {
         parent::__construct();
         $this->load->model('m_user');
+        $this->user_login->cek_login();
     }
     
  

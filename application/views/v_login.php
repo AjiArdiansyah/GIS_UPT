@@ -1,7 +1,7 @@
 <div class="col-sm-7">
     <div class="panel panel-primary">
         <div class="panel-heading">
-            Input Data User
+            Login User
         </div>
         <div class="panel-body">
             <?php
@@ -18,14 +18,8 @@
                 echo '</div>';
             }
 
-            echo form_open('user/input');
+            echo form_open('login/index');
             ?>
-
-            <div class="form-group">
-                <label>Nama User</label>
-                <input name="nama_user" placeholder="Nama User" value="<?= set_value('nama_user') ?>"
-                class="form-control" />
-            </div>
 
             <div class="form-group">
                 <label>Username</label>
@@ -35,14 +29,14 @@
 
             <div class="form-group">
                 <label>Password</label>
-                <input name="password" placeholder="Password" value="<?= set_value('password') ?>"
+                <input  type="password" name="password" placeholder="Password" value="<?= set_value('password') ?>"
                 class="form-control" />
             </div>
 
             <div class="form-group">
                 <label></label>
-                <button type="submit" class="btn btn-sm btn-primary">Simpan</button>
-                <button type="reset" class="btn btn-sm btn-success">Reset</button>
+                <button type="submit" class="btn btn-sm btn-primary">Login</button>
+                
 
             </div>
 

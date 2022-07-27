@@ -55,6 +55,7 @@ class Gis extends CI_Controller {
             'page' => 'v_polyline',
         );
 		$this->load->view('v_template', $data, false);
+        $this->user_login->cek_login();
 	}
 
     public function polygon()
