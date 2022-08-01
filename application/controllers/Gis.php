@@ -65,6 +65,7 @@ class Gis extends CI_Controller {
             'page' => 'v_polygon',
         );
 		$this->load->view('v_template', $data, false);
+        $this->user_login->cek_login();
 	}
 
     public function geojson()
@@ -74,6 +75,7 @@ class Gis extends CI_Controller {
             'page' => 'v_geojson',
         );
 		$this->load->view('v_template', $data, false);
+        $this->user_login->cek_login();
 	}
 
     public function getcoordinat()
@@ -83,6 +85,7 @@ class Gis extends CI_Controller {
             'page' => 'v_getcoordinat',
         );
 		$this->load->view('v_template', $data, false);
+        $this->user_login->cek_login();
 	}
 
     public function drawermap()
@@ -92,5 +95,6 @@ class Gis extends CI_Controller {
             'page' => 'v_drawer_map',
         );
 		$this->load->view('v_template', $data, false);
+        $this->user_login->cek_login();
 	}
 }
