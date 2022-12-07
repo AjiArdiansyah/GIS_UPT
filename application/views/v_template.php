@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Free Bootstrap Admin Template : Binary Admin</title>
+    <title>Sistem Informasi Geografis</title>
     <!-- BOOTSTRAP STYLES-->
     <link href="<?= base_url('binary-admin/') ?>assets/css/bootstrap.css" rel="stylesheet" />
     <!-- FONTAWESOME STYLES-->
@@ -143,9 +143,9 @@ font-size: 16px;"> Tanggal : <?= date('d M Y') ?>.
                        
                         <?php } ?>
                    
-                    <li>
-                        <a class="active-menu" href="blank.html"><i class="fa fa-square-o"></i> Blank Page</a>
-                    </li>
+                    <!-- <li>
+                        <a class="active-menu" href="v_home.php"><i class="fa fa-square-o"></i>Dashboard</a>
+                    </li> -->
                 </ul>
 
             </div>

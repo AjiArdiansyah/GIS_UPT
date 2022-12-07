@@ -20,7 +20,6 @@ class Lokasi extends CI_Controller {
 			'lokasi' => $this->m_lokasi->allData(),
         );
 		$this->load->view('v_template', $data, false);
-		$this->user_login->cek_login();
 	}
 
 	//input data
@@ -45,7 +44,6 @@ class Lokasi extends CI_Controller {
 				'page' => 'lokasi/v_input_lokasi',
 			);
 			$this->load->view('v_template', $data, false);
-			$this->user_login->cek_login();
 		}else {
 			$config['upload_path'] ='./gambar/';
 			$config['allowed_types'] = 'gif|jpg|png|jpeg';
@@ -58,7 +56,6 @@ class Lokasi extends CI_Controller {
 					'error_upload' => $this->upload->display_errors(),
 				);
 				$this->load->view('v_template', $data, false);
-				$this->user_login->cek_login();
 		}else {
 			$upload_data = array('upload_data' => $this->upload->data());
 			$config['image_library'] = 'gd2';
@@ -99,7 +96,6 @@ class Lokasi extends CI_Controller {
 				'lokasi' => $this->m_lokasi->detail($id_lokasi),
 			);
 			$this->load->view('v_template', $data, false);
-			$this->user_login->cek_login();
 		}else {
 			$config['upload_path'] ='./gambar/';
 			$config['allowed_types'] = 'gif|jpg|png|jpeg';
@@ -143,6 +139,7 @@ class Lokasi extends CI_Controller {
 			redirect('lokasi/index');
 			}
 		}
+		
 	}
 	public function detail($id_lokasi)
 	{
@@ -152,7 +149,7 @@ class Lokasi extends CI_Controller {
 			'lokasi' => $this->m_lokasi->detail($id_lokasi),
         );
 		$this->load->view('v_template', $data, false);
-		$this->user_login->cek_login();
+
 	}
 
 	public function delete($id_lokasi)
@@ -172,6 +169,5 @@ class Lokasi extends CI_Controller {
 			'lokasi' => $this->m_lokasi->allData(),
         );
 		$this->load->view('v_template', $data, false);
-		$this->user_login->cek_login();
 	}
 }
