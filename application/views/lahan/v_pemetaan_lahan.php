@@ -1,15 +1,14 @@
 <?php
 //notifikasi pesan data berhasil disimpan
-if ($this->session->flashdata('pesan')) {
-	echo '<div class="alert alert-danger">';
-	echo $this->session->flashdata('pesan');
-	echo '</div>';
-}
+        if ($this->session->flashdata('pesan')) {
+            echo '<div class="alert alert-success">';
+            echo $this->session->flashdata('pesan');
+            echo '</div>';
+        }
 ?>
-<div id="map" style="width: 100%; height: 500px;"></div>
+<div id="map" style="width: 100%; height: 700px;"></div>
 
 <script>
-
 var peta1 = L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
 		attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, ' +
 			'<a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
@@ -40,8 +39,8 @@ var peta4 = L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}
 
     var map = L.map('map', {
 		center: [-6.770664956358395, 111.7254219767461],
-		zoom: 14,
-		layers: [peta1],
+		zoom: 19,
+		layers: [peta2],
 	});
 
     var baseLayers = {
@@ -50,22 +49,24 @@ var peta4 = L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}
         'Street 3': peta3,
         'Dark 4': peta4,
     };
-    var layerControl = L.control.layers(baseLayers).addTo(map);
-
-    <?php foreach ($lokasi as $key => $value) { ?>
-        L.marker([<?= $value->latitude ?>, <?= $value->longitude ?>])
-        .bindPopup("<b><?= $value->nama_lokasi ?></b><br>" +
-            "Lat : <?= $value->latitude ?><br>"+
-            "Long : <?= $value->longitude ?><br><br>"+
-			"<img width='200px' src='<?= base_url('gambar/' . $value->gambar) ?>'><br><br>"+
+        var layerControl = L.control.layers(baseLayers).addTo(map);
+	
+	//pemetaan lahan
+	<?php foreach ($lahan as $key => $value) { ?>
+		L.geoJSON(<?= $value->geojson ?>,{
+			color: 'grey',
+			fillColor: '<?=$value->warna ?>',
+            fillOpacity: 1.0,
+		}).bindPopup("Nama Lahan : <? $value->nama_lahan ?><br>" +
+			"Pemilik : <? $value->pemilik ?><br>" +
+			"Luas : <? $value->Luas ?><br>" +
+			"Sertifikat : <a target='_blank' href='<?= base_url('sertifikat/'.$value->sertifikat) ?>'>Lihat<br>"+
 			"<div class='text-center'>"+
-			"<a class='btn btn-xs btn-success'"+
-			"href='<?= base_url('lokasi/edit/' . $value->id_lokasi) ?>'>Edit</a>     "+
 			"<a class='btn btn-xs btn-warning'"+
-			"href='<?= base_url('lokasi/detail/' . $value->id_lokasi) ?>'>Detail</a>     "+
-			"<a onclick='return confirm()'class='btn btn-xs btn-danger'"+
-			"href='<?= base_url('lokasi/delete/' . $value->id_lokasi) ?>'>Delete</a>"+
+			"href='<?= base_url('lahan/edit/' . $value->id_lahan) ?>'>Edit</a>     "+
+			"<a class='btn btn-xs btn-danger' onClick='return confirm()'"+
+			"href='<?= base_url('lahan/delete/' . $value->id_lahan) ?>'>Delete</a>     "+     
 			"</div>")
-        .addTo(map);
-    <?php } ?>
+		.addTo(map);
+	<?php } ?>
 </script>

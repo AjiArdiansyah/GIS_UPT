@@ -27,10 +27,10 @@ class M_lahan extends CI_Model {
 		return $this->db->get()->row();
 	}
 
-	public function edit($edit)
+	public function edit($data)
 	{
-		$this->db->where('id_lahan', $edit['id_lahan']);
-		$this->db->update('tbl_lahan', $edit);
+		$this->db->where('id_lahan', $data['id_lahan']);
+		$this->db->update('tbl_lahan', $data);
 		
 		
 	}

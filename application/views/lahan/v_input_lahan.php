@@ -1,6 +1,6 @@
 <div class="row">
     <div class="col-sm-8">
-        <div id="map" style="width: 100%; height: 500px;"></div>
+        <div id="map" style="width: 100%; height: 700px;"></div>
     </div>
 
     <div class="col-sm-4">
@@ -46,6 +46,11 @@
         <div class="form-group">
             <label>GeoJSON</label>
             <textarea name="geojson" rows="8" class="form-control" readonly></textarea>
+        </div>
+
+        <div class="form-group">
+            <label>Warna</label>
+            <input class="form-control" name="warna">
         </div>
     
 

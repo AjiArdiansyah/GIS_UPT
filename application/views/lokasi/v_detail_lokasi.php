@@ -3,11 +3,8 @@
     <div id="map" style="width: 100%; height: 500px;"></div>
 </div>
 
-<div class="col-sm-6">
-   
-    
-
-    <table class="table table-bordered">
+<div class="col-sm-4">
+<table class="table table-bordered">
         <tr>
             <th>Nama Lokasi </th>
                 <th>:</th>
@@ -62,8 +59,8 @@ var peta4 = L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}
 
     var map = L.map('map', {
 		center: [<?= $lokasi->latitude ?>, <?= $lokasi->longitude ?>],
-		zoom: 14,
-		layers: [peta1],
+		zoom: 19,
+		layers: [peta2],
 	});
 
     var baseLayers = {
@@ -72,13 +69,12 @@ var peta4 = L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}
         'Street 3': peta3,
         'Dark 4': peta4,
     };
-
+    
     L.marker([<?= $lokasi->latitude ?>, <?= $lokasi->longitude ?>])
     .addTo(map)
     .bindPopup("<b><?= $lokasi->nama_lokasi ?></b><br>" +
             "Lat : <?= $lokasi->latitude ?><br>"+
-            "Long : <?= $lokasi->longitude ?><br>"
-            "<img width='200px' src='<?= base_url('gambar/' . $lokasi->gambar) ?>'><br><br>"
+            "Long : <?= $lokasi->longitude ?><br>"+
+            "<img width='300px' src='<?= base_url('gambar/' . $lokasi->gambar) ?>'><br><br>"
             ).openPopup();
-   
 </script>

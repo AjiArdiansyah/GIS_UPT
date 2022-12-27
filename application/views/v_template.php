@@ -140,6 +140,23 @@ font-size: 16px;"> Tanggal : <?= date('d M Y') ?>.
                             </ul>
                         </li>
 
+                        <li>
+                            <a href="#"><i class="fa fa-sitemap "></i> Lahan<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="<?= base_url('lahan/input') ?>">Input Lahan</a>
+                                </li>
+                                <li>
+                                    <a href="<?= base_url('lahan/index') ?>">Pemetaan Coordinat</a>
+                                </li>
+                                <li>
+                                    <a href="<?= base_url('lahan/listlokasi') ?>">List Lahan</a>
+                                </li>
+                                <li>
+
+                            </ul>
+                        </li>
+
                        
                         <?php } ?>
                    

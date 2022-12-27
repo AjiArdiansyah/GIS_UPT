@@ -1,4 +1,4 @@
-<div id="map" style="width: 100%; height: 400px;"></div>
+<div id="map" style="width: 100%; height: 600px;"></div>
 
 <script>
 var peta1 = L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
@@ -31,8 +31,8 @@ var peta4 = L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}
 
     var map = L.map('map', {
 		center: [-6.770664956358395, 111.7254219767461],
-		zoom: 14,
-		layers: [peta1],
+		zoom: 16,
+		layers: [peta2],
 	});
 
     var baseLayers = {

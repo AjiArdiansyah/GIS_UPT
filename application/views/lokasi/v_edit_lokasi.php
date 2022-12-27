@@ -84,7 +84,7 @@ var peta4 = L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}
     var map = L.map('map', {
 		center: [<?= $lokasi->latitude ?>, <?= $lokasi->longitude ?>],
 		zoom: 14,
-		layers: [peta1],
+		layers: [peta2],
 	});
 
     var baseLayers = {

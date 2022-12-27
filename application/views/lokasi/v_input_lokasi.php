@@ -77,7 +77,7 @@ var peta4 = L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}
     var map = L.map('map', {
 		center: [-6.770664956358395, 111.7254219767461],
 		zoom: 14,
-		layers: [peta1],
+		layers: [peta2],
 	});
 
     var baseLayers = {

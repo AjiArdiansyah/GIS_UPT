@@ -1,6 +1,6 @@
 <div class="row">
     <div class="col-sm-8">
-        <div id="map" style="width: 100%; height: 500px;"></div>
+        <div id="map" style="width: 100%; height: 600px;"></div>
     </div>
 
     <div class="col-sm-4">
@@ -42,7 +42,7 @@ var peta4 = L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}
 
     var map = L.map('map', {
 		center: [-6.770664956358395, 111.7254219767461],
-		zoom: 14,
+		zoom: 17,
 		layers: [peta2],
 	});
 

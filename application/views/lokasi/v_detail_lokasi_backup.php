@@ -1,4 +1,35 @@
-<div id="map" style="width: 100%; height: 600px;"></div>
+<div class="row">
+    <div class="col-sm-6">
+    <div id="map" style="width: 100%; height: 500px;"></div>
+</div>
+
+<div class="col-sm-6">
+   
+    
+
+    <table class="table table-bordered">
+        <tr>
+            <th>Nama Lokasi </th>
+                <th>:</th>
+                <td><?= $lokasi->nama_lokasi ?></td>
+             </tr>
+             <tr>
+            <th>Latitude</th>
+                <th>:</th>
+                <td><?= $lokasi->latitude ?></td>
+             </tr>
+             <tr>
+            <th>Longitude </th>
+                <th>:</th>
+                <td><?= $lokasi->longitude ?></td>
+             </tr>
+    </table>
+    <a class="btn btn-success" href="<?= base_url('lokasi/index') ?>">Kembali</a>
+
+</div>
+
+</div>
+
 
 <script>
 var peta1 = L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
@@ -30,8 +61,8 @@ var peta4 = L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}
     
 
     var map = L.map('map', {
-		center: [-6.770664956358395, 111.7254219767461],
-		zoom: 17,
+		center: [<?= $lokasi->latitude ?>, <?= $lokasi->longitude ?>],
+		zoom: 14,
 		layers: [peta2],
 	});
 
@@ -41,44 +72,13 @@ var peta4 = L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}
         'Street 3': peta3,
         'Dark 4': peta4,
     };
-        var layerControl = L.control.layers(baseLayers).addTo(map);
-	
-    //geojson aceh
-    $.getJSON("<?= base_url('provinsi/11.geojson')?>", function(data){
-        geoLayer = L.geoJson(data, {
-            style: function(feature) {
-                return {
-                    color: 'red',
-                    fillOpacity: 1.0,
-                }
-            }
-        }).addTo(map);
-        //menampilkan informasi saat wilayah di click
-        geoLayer.eachLayer(function(layer){
-            layer.bindPopup("<b>UPT </br><br> "+ "Pelabuhan perikanan pantai<br>"
-     + "<img src='<?= base_url('foto/download.jpg')?>' width='300px'>")
-        })
-    });
 
-    //geojson sumut
-    $.getJSON("<?= base_url('provinsi/12.geojson')?>", function(data){
-        geoLayer = L.geoJson(data, {
-            style: function(feature) {
-                return {
-                    color: 'yellow',
-                }
-            }
-        }).addTo(map);
-    });
-
-    //geojson sumbar
-    $.getJSON("<?= base_url('provinsi/13.geojson')?>", function(data){
-        geoLayer = L.geoJson(data).addTo(map);
-    });
-
-    //geojson jambi
-    $.getJSON("<?= base_url('provinsi/14.geojson')?>", function(data){
-        geoLayer = L.geoJson(data).addTo(map);
-    });
-
+    L.marker([<?= $lokasi->latitude ?>, <?= $lokasi->longitude ?>])
+    .addTo(map)
+    .bindPopup("<b><?= $lokasi->nama_lokasi ?></b><br>" +
+            "Lat : <?= $lokasi->latitude ?><br>"+
+            "Long : <?= $lokasi->longitude ?><br>"
+            "<img width='300px' src='<?= base_url('gambar/' . $lokasi->gambar) ?>'><br><br>"
+            ).openPopup();
+   
 </script>
